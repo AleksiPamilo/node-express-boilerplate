@@ -2,6 +2,9 @@ import express from "express";
 import bodyparser from "body-parser";
 import cors from "cors";
 import dotenv from "dotenv";
+
+import routes from "./routes";
+
 dotenv.config();
 
 const app = express();
@@ -17,6 +20,8 @@ app.get("/", (_req, res) => {
         code: 200,
     });
 });
+
+app.use("/", routes);
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
