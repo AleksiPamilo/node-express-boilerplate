@@ -11,7 +11,7 @@ describe("Test", () => {
         chai.request(server)
             .get("/")
             .end((_, res) => {
-                chai.should().exist(res.body)
+                should.exist(res.body)
                 res.should.have.status(200);
                 res.body.should.be.a("object");
                 res.body.should.have.property("message").eq("Hello World");
